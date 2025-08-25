@@ -564,35 +564,37 @@ body, html {
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Tło w ramce</title>
+  <title>Tło ze zdjęciem</title>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      background: #f0f0f0; /* kolor tła strony */
-    }
-
-    .ramka {
-      width: 351px;               /* szerokość ramki */
-      height: 241.98px;           /* wysokość ramki */
-      background-image: url("images/warstwa_2.png"); /* zmień na swoją ścieżkę */ 
-      background-size: contain;   /* całe zdjęcie zmieści się w ramce */
-      background-position: center;
-      background-repeat: no-repeat;
-      border: 2px solid #333;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      height: 45vh; /* pełna wysokość ekranu */
+      background-image: url("images/warstwa_2.png"); /* ścieżka do pliku */
+      background-size: cover; /* dopasowanie do okna */
+      background-position: center; /* wyśrodkowanie */
+      background-repeat: no-repeat; /* bez powtarzania */
     }
   </style>
 </head>
 <body>
-  <div class="ramka"></div>
 </body>
 </html>
 
+<div id="box">
+  Tutaj zawartość
+</div>
+
+<style>
+  #box {
+    width: 230px;
+    height: 125px;
+    background-image: url("images/moje-tlo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black; /* dla testu */
+  }
+</style>
 
   
 
