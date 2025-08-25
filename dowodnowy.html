@@ -563,37 +563,39 @@ body, html {
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <title>Obraz w ramce</title>
+  <meta charset="UTF-8">
+  <title>Tło ze zdjęciem</title>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      background: #f0f0f0; /* tło strony, nie obrazka */
-    }
-
-    .ramka {
-      width: 567px;   /* odpowiada ok. 15 cm */
-      height: 340px;  /* odpowiada ok. 9 cm */
-      border: 2px dashed orange;
-
-      /* ⬇️ kluczowe — obrazek jako tło ramki */
-      background-image: url("images/moje-tlo.jpg"); /* <-- tu wpisz nazwę swojego pliku */ 
-      background-size: contain;  /* całe zdjęcie mieści się w ramce */
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 100vh; /* pełna wysokość ekranu */
+      background-image: url("images/warstwa_2.png"); /* ścieżka do pliku */
+      background-size: cover; /* dopasowanie do okna */
+      background-position: center; /* wyśrodkowanie */
+      background-repeat: no-repeat; /* bez powtarzania */
     }
   </style>
 </head>
 <body>
-  <div class="ramka"></div>
 </body>
 </html>
 
-  
+  <div id="box">
+  Tutaj zawartość
+</div>
+
+<style>
+  #box {
+    width: 400px;
+    height: 250px;
+    background-image: url("images/warstwa_2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black; /* dla testu */
+  }
+</style>
+
 
 
 
