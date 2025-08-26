@@ -563,52 +563,75 @@ body, html {
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Karta z ramką</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: url("images/warstwa2.png") no-repeat center top;
-      background-size: contain;
-      position: relative;
-    }
+<meta charset="utf-8" />
+<title>Podgląd dokumentu z ramką</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    font-family: sans-serif;
+  }
 
-    #box {
-      width: 270px;
-      height: 180px;
-      position: absolute;
-      top: 210px;
-      left: 40px;
-    }
+  /* wrapper - trzyma obraz dokumentu i pozycjonuje overlay */
+  .doc-wrapper {
+    position: relative;
+    width: 420px;    /* dopasuj szerokość do swojego obrazu dokumentu */
+    max-width: 90vw;
+  }
 
-    #box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* dopasuje zdjęcie */
-      border-radius: 8px; /* opcjonalnie zaokrąglenie rogów */
-    }
+  /* dokument jako realny obraz -> zachowa proporcje */
+  .doc-wrapper img.document {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-    /* nakładka ramki */
-    #box::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("images/warstwa2.png") no-repeat center;
-      background-size: cover;
-      pointer-events: none; /* ramka nie blokuje kliknięć */
-    }
-  </style>
+  /* ramka / box gdzie będzie zdjęcie */
+  #box {
+    position: absolute;
+    /* Używaj wartości w % aby box skalował się razem z dokumentem */
+    left: 6.5%;   /* dostosuj, by ustawić od lewej */
+    top: 8.5%;    /* dostosuj, by ustawić od góry */
+    width: 17.5%; /* szerokość boxa względem dokumentu */
+    height: 13.5%;/* wysokość boxa względem dokumentu */
+    overflow: hidden;   /* obcina zdjęcie do rozmiaru boxa */
+    border-radius: 8px; /* opcjonalne zaokrąglenie */
+    z-index: 2;
+    background-color: #fff; /* tylko gdy zdjęcie nie załaduje się - widać tło */
+  }
+
+  /* zdjęcie wewnątrz boxa (dopasowuje się) */
+  #box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* wypełnia całe pole, przycina z boków jeśli trzeba */
+    display: block;
+  }
+
+  /* nakładka ramki (grafika z obramowaniem) - leży NAWIERZCH zdjęcia */
+  #box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: url("images/warstwa2.png") no-repeat center;
+    background-size: cover;
+    z-index: 3;
+  }
+</style>
 </head>
 <body>
-  <div id="box">
-    <img src="images/zdjecie.png" alt="zdjęcie">
+  <div class="doc-wrapper">
+  
+    </div>
   </div>
 </body>
 </html>
+
 
 
 
