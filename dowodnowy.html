@@ -568,25 +568,27 @@ body, html {
   <style>
     body {
       margin: 0;
-      height: 100vh; /* pełna wysokość ekranu */
-      background-image: url("images/warstwa_2.png"); /* ścieżka do pliku */
-      background-size: cover;       /* dopasowanie do okna */
-      background-position: center;  /* wyśrodkowanie */
-      background-repeat: no-repeat; /* bez powtarzania */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 100vh; 
+      background-image: url("images/warstwa_2.png"); /* całe tło */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative; /* ważne! */
     }
 
     #box {
       width: 270px;   /* szerokość ramki */
       height: 180px;  /* wysokość ramki */
       background-image: url("images/warstwa_2.png"); /* obrazek w ramce */
-      background-size: cover;       /* dopasuje i przytnie */
-      background-position: center;  /* wyśrodkowanie */
-      background-repeat: no-repeat; /* bez powtarzania */
-      border-radius: 8px;           /* opcjonalnie zaokrąglone rogi */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 8px;
       overflow: hidden;
+
+      position: absolute; 
+      top: 210px;   /* odległość od góry */
+      left: 40px;   /* odległość od lewej */
     }
   </style>
 </head>
@@ -594,6 +596,8 @@ body, html {
   <div id="box"></div>
 </body>
 </html>
+Wysłano
+Napisz do:
 
 
 
