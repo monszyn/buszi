@@ -566,7 +566,14 @@ body, html {
   <meta charset="UTF-8">
   <title>Karta z ramką</title>
   <style>
-    body 
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url("images/dokument.png") no-repeat center top; /* całe tło */
+      background-size: contain;  /* żeby zachować proporcje dokumentu */
+      position: relative;
+    }
+
     #box {
       width: 270px;   /* szerokość ramki */
       height: 180px;  /* wysokość ramki */
@@ -583,7 +590,6 @@ body, html {
   <div id="box"></div>
 </body>
 </html>
-
 
 
 
