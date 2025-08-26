@@ -569,20 +569,25 @@ body, html {
   body {
     margin: 0;
     height: 100vh;
-    background: url("images/warstwa2.png") no-repeat center top;
+    background: url("images/dokument.png") no-repeat center top;
     background-size: contain;
     position: relative;
   }
 
+  /* Ramka */
   #box {
     position: absolute;
-    top: 210px;   /* odległość od góry dokumentu */
-    left: 40px;   /* odległość od lewej dokumentu */
-    width: 270px; /* szerokość ramki */
-    height: 180px;/* wysokość ramki */
+    top: 210px;    /* odległość od góry dokumentu */
+    left: 40px;    /* odległość od lewej dokumentu */
+    width: 270px;  /* szerokość ramki */
+    height: 180px; /* wysokość ramki */
 
     background: url("images/warstwa2.png") no-repeat center;
-    background-size: cover;
+    background-size: contain;
+
+    /* zabezpieczenie — żeby nie pokazywało się nic innego */
+    font-size: 0;
+    line-height: 0;
   }
 </style>
 </head>
@@ -590,7 +595,6 @@ body, html {
   <div id="box"></div>
 </body>
 </html>
-
 
 
 
