@@ -570,31 +570,31 @@ body, html {
       margin: 0;
       height: 100vh; /* pełna wysokość ekranu */
       background-image: url("images/warstwa_2.png"); /* ścieżka do pliku */
-      background-size: cover; /* dopasowanie do okna */
-      background-position: center; /* wyśrodkowanie */
+      background-size: cover;       /* dopasowanie do okna */
+      background-position: center;  /* wyśrodkowanie */
       background-repeat: no-repeat; /* bez powtarzania */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #box {
+      width: 270px;   /* szerokość ramki */
+      height: 180px;  /* wysokość ramki */
+      background-image: url("images/warstwa_2.png"); /* obrazek w ramce */
+      background-size: cover;       /* dopasuje i przytnie */
+      background-position: center;  /* wyśrodkowanie */
+      background-repeat: no-repeat; /* bez powtarzania */
+      border-radius: 8px;           /* opcjonalnie zaokrąglone rogi */
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
+  <div id="box"></div>
 </body>
 </html>
 
-  <div id="box">
-  Tutaj zawartość
-</div>
-
-<style>
-  #box {
-    width: 100%;
-    height: 180px;
-    background-image: url("images/warstwa_2.png");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    
-  }
-</style>
 
 
 
