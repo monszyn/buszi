@@ -560,11 +560,11 @@ body, html {
     <script src="js/scale.js"></script>
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-<meta charset="utf-8" />
-<title>Podgląd dokumentu z ramką</title>
+<meta charset="utf-8"/>
+<title>Kolekcjonerski dokument</title>
 <style>
   body {
     margin: 0;
@@ -573,61 +573,53 @@ body, html {
     align-items: center;
     justify-content: center;
     background: #f2f2f2;
-    font-family: sans-serif;
   }
 
-  /* wrapper - trzyma obraz dokumentu i pozycjonuje overlay */
   .doc-wrapper {
     position: relative;
-    width: 420px;    /* dopasuj szerokość do swojego obrazu dokumentu */
+    width: 420px;     /* szerokość dokumentu */
     max-width: 90vw;
   }
 
-  /* dokument jako realny obraz -> zachowa proporcje */
   .doc-wrapper img.document {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  /* ramka / box gdzie będzie zdjęcie */
+  /* BOX – miejsce na ramkę */
   #box {
     position: absolute;
-    /* Używaj wartości w % aby box skalował się razem z dokumentem */
-    left: 6.5%;   /* dostosuj, by ustawić od lewej */
-    top: 8.5%;    /* dostosuj, by ustawić od góry */
-    width: 17.5%; /* szerokość boxa względem dokumentu */
-    height: 13.5%;/* wysokość boxa względem dokumentu */
-    overflow: hidden;   /* obcina zdjęcie do rozmiaru boxa */
-    border-radius: 8px; /* opcjonalne zaokrąglenie */
+    left: 6.5%;     /* odległość od lewej dokumentu */
+    top: 8.5%;      /* odległość od góry dokumentu */
+    width: 17.5%;   /* szerokość ramki */
+    height: 13.5%;  /* wysokość ramki */
+    overflow: hidden;
     z-index: 2;
-    background-color: #fff; /* tylko gdy zdjęcie nie załaduje się - widać tło */
+    background: url("images/warstwa_2.png") no-repeat center/cover; /* tło w środku */
+    font-size: 0;   /* ukrycie ewentualnego tekstu */
+    line-height: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  /* zdjęcie wewnątrz boxa (dopasowuje się) */
-  #box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* wypełnia całe pole, przycina z boków jeśli trzeba */
-    display: block;
-  }
-
-  /* nakładka ramki (grafika z obramowaniem) - leży NAWIERZCH zdjęcia */
+  /* RAMKA na wierzchu */
   #box::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: url("images/warstwa2.png") no-repeat center;
-    background-size: cover;
+    background: url("images/warstwa2222.png") no-repeat center/contain;
+    background-size: contain;
     z-index: 3;
   }
 </style>
 </head>
 <body>
   <div class="doc-wrapper">
-  
-    </div>
+    <img class="document" src="" alt="dokument">
+    <div id="box"></div>
   </div>
 </body>
 </html>
